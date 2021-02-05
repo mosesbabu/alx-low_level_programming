@@ -21,18 +21,19 @@ int main(void)
 				while (b < 58)
 				{
 
-					if (d == i && a < b)
+					if (d == i && a <= b)
 					{
 						putchar(d);
 						putchar(a);
 						putchar(' ');
 						putchar(i);
 						putchar(b);
-						if (!(d == 57 && a == 56 && i == 57 && b == 57))
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					if (!(d == i == b == 57
+						&& a == 56))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 					}
 					b++;
 				}
