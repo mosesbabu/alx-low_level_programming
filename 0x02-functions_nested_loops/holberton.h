@@ -1,7 +1,11 @@
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
+
 #include <unistd.h>
 
 /**
  * holberton - header file with all my function prototypes
+ *@c: ascii value
  *
  * Return: depends.
  */
@@ -17,3 +21,5 @@ void jack_bauer(void);
 void times_table(void);
 int add(int, int);
 void print_to_98(int n);
+
+#endif /* HOLBERTON_H */
