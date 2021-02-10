@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-void comma_spaces_nums(int, int, int);
-
 /**
  * print_times_table - function that prints times table for a given number
  *@n: the given number to create the times table
