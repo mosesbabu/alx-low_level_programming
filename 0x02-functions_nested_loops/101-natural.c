@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * natural - check the code for Holberton School students.
+ * main - check the code for Holberton School students.
  *
- * Return: Always 0.
+ * Return: int
  */
-void natural(void)
+int main(void)
 {
 	int i = 0, sum = 0;
 
@@ -17,4 +17,5 @@ void natural(void)
 		i++;
 	}
 	printf("%d\n", sum);
+	return (0);
 }
