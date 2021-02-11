@@ -1,5 +1,5 @@
 #include "holberton.h"
-`
+
 /**
  * print_number - prints a number using _putchar
  * @n: number to print
