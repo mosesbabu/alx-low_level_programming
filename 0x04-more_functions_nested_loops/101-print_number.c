@@ -1,7 +1,5 @@
 #include "holberton.h"
-
-void num_to_char(int n);
-
+`
 /**
  * print_number - prints a number using _putchar
  * @n: number to print
