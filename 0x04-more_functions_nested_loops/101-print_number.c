@@ -8,15 +8,19 @@
  */
 void print_number(int n)
 {
-	if (n >= 0)
+	unsigned int un = 0;
+	if (n < 0)
 	{
+		if (n < 1000000000)
+			n = -n;
+		un = n;
+		_putchar(45);
 		num_to_char(n);
 	}
 	else
 	{
-		n = -n;
-		_putchar('-');
-		num_to_char(n);
+		un = n;
+		num_to_char(un);
 	}
 }
 
@@ -26,9 +30,9 @@ void print_number(int n)
  *
  * Return: void
  */
-void num_to_char(int n)
+void num_to_char(unsigned int n)
 {
-	int d = 10;
+	unsigned int d = 10;
 
 	if (n < d)
 	{
@@ -39,8 +43,11 @@ void num_to_char(int n)
 		while (n >= d)
 		{
 			d *= 10;
+			if (d >= 1000000000)
+				break;
 		}
-		d /= 10;
+		if (!(d >= 1000000000))
+			d /= 10;
 		_putchar('0' + n / d);
 		while (d != 10)
 		{
