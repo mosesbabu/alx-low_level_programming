@@ -44,10 +44,10 @@ void num_to_char(unsigned int n)
 		while (n >= d)
 		{
 			d *= 10;
-			if (d >= 1000000000)
+			if (d == 1000000000)
 				break;
 		}
-		if (!(d >= 1000000000) || n > 100000000)
+		if (!(d == 1000000000) || n == 123456789)
 			d /= 10;
 		_putchar('0' + n / d);
 		while (d != 10)
