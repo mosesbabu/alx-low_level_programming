@@ -9,6 +9,7 @@
 void print_number(int n)
 {
 	unsigned int un = 0;
+
 	if (n < 0)
 	{
 		if (n < 1000000000)
@@ -46,7 +47,7 @@ void num_to_char(unsigned int n)
 			if (d >= 1000000000)
 				break;
 		}
-		if (!(d >= 1000000000))
+		if (!(d >= 1000000000) || n > 100000000)
 			d /= 10;
 		_putchar('0' + n / d);
 		while (d != 10)
