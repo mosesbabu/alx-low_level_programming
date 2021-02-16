@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * *_strcpy - copies string to given memory location
  * @dest: where the string needs to be copied
@@ -16,7 +14,7 @@ char *_strcpy(char *dest, char *src)
 		*(dest + len) = *(src + len);
 		len++;
 	}
-	*(dest + len + 1) = *(src + len + 1);
+	*(dest + len) = *(src + len);
 
 	return (dest);
 }
