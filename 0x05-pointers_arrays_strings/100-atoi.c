@@ -8,20 +8,18 @@
  */
 int _atoi(char *s)
 {
-	int i = 0, len, sign = 0 first_digit, last_digit, dig = 1, num;
+	int i = 0, sign = 1, first_digit = 0, last_digit = 0, dig = 1;
+	unsigned int num = 0;
 
-	while (*(s + i) != '\0')
-		i++;
-	len = i - 1;
-	i = 0;
+	/* Find first and last numeric digit as well as sign if there is a number*/
 	while (*(s + i) != '\0')
 	{
+		if (*(s + i) == '-')
+			sign *= -1;
 		if (*(s + i) > 47 && *(s + i) < 58)
 		{
 			if (!(*(s + i - 1) > 47 && *(s + i - 1) < 58))
 				first_digit = i;
-			if (*(s + i - 1) == 45)
-				sign = 0;
 			if (!(*(s + i + 1) > 47 && *(s + i + 1) < 58))
 			{
 				last_digit = i;
@@ -30,20 +28,20 @@ int _atoi(char *s)
 		}
 		i++;
 	}
+	/* Find the number of digits of the number if it exists */
 	i = first_digit;
-	while (i <= last_digit)
+	while (i < last_digit)
 	{
 		dig *= 10;
 		i++;
 	}
-	i = first_digit
+	i = first_digit;
 	while (i <= last_digit)
 	{
 		num += (*(s + i) - '0') * dig;
 		dig /= 10;
 		i++;
 	}
-	if (!sign)
-		num *= -1;
+	num *= sign;
 	return (num);
 }
