@@ -29,19 +29,22 @@ int _atoi(char *s)
 		i++;
 	}
 	/* Find the number of digits of the number if it exists */
-	i = first_digit;
-	while (i < last_digit)
+	if (!first_digit && !last_digit)
 	{
-		dig *= 10;
-		i++;
+		i = first_digit;
+		while (i < last_digit)
+		{
+			dig *= 10;
+			i++;
+		}
+		i = first_digit;
+		while (i <= last_digit)
+		{
+			num += (*(s + i) - '0') * dig;
+			dig /= 10;
+			i++;
+		}
+		num *= sign;
 	}
-	i = first_digit;
-	while (i <= last_digit)
-	{
-		num += (*(s + i) - '0') * dig;
-		dig /= 10;
-		i++;
-	}
-	num *= sign;
 	return (num);
 }
