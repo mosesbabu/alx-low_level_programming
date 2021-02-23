@@ -15,7 +15,7 @@ void print_diagsums(int *a, int size)
 
 	len = size * size;
 	while (i < len)
-	{ 
+	{
 		diag_sum += a[i];
 		i += size + 1;
 	}
