@@ -8,15 +8,11 @@
  */
 int is_palindrome(char *s)
 {
-	int len = _strlen_recursion(s), mid;
+	int len = _strlen_recursion(s), i = 0;
 
 	if (len == 0)
 		return (1);
-	if (len % 2 == 0)
-		mid = len / 2;
-	else
-		mid = (len - 1) / 2;
-	return (palindrome_check(s, len, mid));
+	return (palindrome_check(s, len - 1, i));
 }
 
 /**
@@ -43,11 +39,13 @@ int _strlen_recursion(char *s)
  * @mid: middle of string
  * Return: int
  */
-int palindrome_check(char *s, int len, int mid)
+int palindrome_check(char *s, int len, int i)
 {
-	if (*s != *(s + len - 1) && len >= mid)
-		return (0);
-	else if (*s == *(s + len - 1) && len >= mid)
+	if (len == i)
 		return (1);
-	return (palindrome_check(s + 1, len - 1, mid));
+	else if (s[len] != s[i])
+		return (0);
+	if (i < len)
+		return (palindrome_check(s, --len, ++i));
+	return (1);
 }
