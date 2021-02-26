@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
-int coin_count(char *argv[], int count);
+#include "holberton.h"
 
 /**
  * main - prints the min num of coins to make change for an amount of money
